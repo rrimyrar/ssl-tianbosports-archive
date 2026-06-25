@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>天博体育 · 可信的体育信息服务站点</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f4f2ef;
+            font-family: 'Segoe UI', 'Roboto', system-ui, -apple-system, sans-serif;
+            color: #2c2f33;
+            line-height: 1.7;
+            letter-spacing: 0.01em;
+        }
+
+        /* 深色头图区域 — 故事入口 */
+        .hero {
+            background: linear-gradient(145deg, #0d1b2a 0%, #1b2b40 100%);
+            color: #eaeff5;
+            padding: 5rem 2rem 4.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background: #f4f2ef;
+            clip-path: ellipse(70% 100% at 50% 100%);
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 400;
+            letter-spacing: 0.08em;
+            margin-bottom: 1rem;
+            color: #ffffff;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+        }
+
+        .hero p.lead {
+            font-size: 1.2rem;
+            max-width: 660px;
+            margin: 0 auto;
+            color: #cbd5e1;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+
+        .hero p.lead span {
+            color: #aad3ff;
+        }
+
+        /* 正文浅色区 */
+        .content {
+            max-width: 840px;
+            margin: 0 auto;
+            padding: 2.5rem 2rem 3.5rem;
+            background: #f4f2ef;
+        }
+
+        .content h2 {
+            font-size: 1.8rem;
+            font-weight: 400;
+            margin-top: 2.8rem;
+            margin-bottom: 1rem;
+            color: #1f2a3a;
+            border-bottom: 1px solid #d8d4cf;
+            padding-bottom: 0.3rem;
+        }
+
+        .content h2:first-of-type {
+            margin-top: 0.5rem;
+        }
+
+        .content p {
+            margin-bottom: 1.3rem;
+            font-size: 1.05rem;
+        }
+
+        .content p strong {
+            font-weight: 500;
+            color: #1f3a4b;
+        }
+
+        /* 特点卡片列表 — 柔和叙述感 */
+        .feature-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            margin: 1.8rem 0 0.5rem;
+            list-style: none;
+        }
+
+        .feature-list li {
+            background: #ffffff;
+            border-left: 4px solid #3b6d8c;
+            padding: 1.1rem 1.4rem;
+            flex: 1 1 200px;
+            border-radius: 0 12px 12px 0;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+            transition: background 0.2s;
+            color: #2a3b4c;
+            font-size: 0.98rem;
+        }
+
+        .feature-list li:hover {
+            background: #faf9f7;
+        }
+
+        .feature-list li strong {
+            display: inline-block;
+            margin-bottom: 0.2rem;
+            color: #1f3a4b;
+            font-weight: 500;
+        }
+
+        /* 场景描述区块（温和的FAQ摘要感） */
+        .scene-note {
+            background: #eae7e2;
+            padding: 1.5rem 2rem;
+            border-radius: 20px;
+            margin: 2rem 0 1.5rem;
+            box-shadow: inset 0 1px 4px rgba(0,0,0,0.04);
+        }
+
+        .scene-note h3 {
+            font-weight: 400;
+            font-size: 1.3rem;
+            color: #1f2a3a;
+            margin-bottom: 0.5rem;
+        }
+
+        .scene-note p {
+            margin-bottom: 0.6rem;
+        }
+
+        .scene-note ul {
+            margin: 0.5rem 0 0.2rem 1.2rem;
+            padding-left: 0.2rem;
+        }
+
+        .scene-note ul li {
+            margin-bottom: 0.2rem;
+        }
+
+        /* 链接强调色 */
+        a {
+            color: #2c6280;
+            text-decoration: none;
+            border-bottom: 1px dotted #a0b9cc;
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        a:hover {
+            color: #0f3d59;
+            border-bottom: 1px solid #0f3d59;
+        }
+
+        /* 温和结尾 */
+        .closing {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #d5cfc9;
+            font-style: normal;
+            color: #4d5a66;
+            font-size: 1rem;
+            text-align: left;
+        }
+
+        .closing p {
+            margin-bottom: 0.4rem;
+        }
+
+        .closing small {
+            display: block;
+            margin-top: 1rem;
+            color: #7b8a99;
+            font-size: 0.9rem;
+        }
+
+        /* 响应式 */
+        @media (max-width: 700px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .hero p.lead {
+                font-size: 1rem;
+            }
+            .content {
+                padding: 1.8rem 1.2rem;
+            }
+            .feature-list {
+                flex-direction: column;
+            }
+            .feature-list li {
+                flex: 1 1 auto;
+            }
+        }
+
+        @media (max-width: 450px) {
+            .hero {
+                padding: 3rem 1.2rem 3.5rem;
+            }
+            .hero h1 {
+                font-size: 1.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 深色头图：开场短句 -->
+    <div class="hero">
+        <h1>关于一个站点</h1>
+        <p class="lead">
+            有些地方，适合安静地了解。<br>
+            这里记录着<span>天博体育</span>的一点轮廓。
+        </p>
+    </div>
+
+    <!-- 正文区：承接段落、特点列表、场景与温和结尾 -->
+    <div class="content">
+
+        <!-- 承接段落：介绍与可信说明 -->
+        <h2>站点的来由</h2>
+        <p>
+            在体育信息服务的领域里，一直有这样一个名字：<a href="https://ssl-tianbosports.com">天博体育</a>。
+            它并非一夜之间出现的符号，而是经过数年积累、逐步搭建起来的站点。从最初的信息聚合到如今拥有较为清晰的呈现逻辑，
+            它的变化不算快，但每一步都留下了真实的痕迹。
+        </p>
+        <p>
+            对于很多偶然找到这里的人来说，第一印象或许是简洁、直接、没有多余的装饰。
+            它不试图用喧哗的标语吸引注意力，而是把空间留给了内容本身。站内围绕体育赛事、数据动态以及相关资讯展开，
+            结构偏向实用，入口也明确——熟悉的人自然能找到自己需要的部分。
+        </p>
+
+        <!-- 特点列表：自然，带叙述感 -->
+        <h2>几个值得留意的侧面</h2>
+        <ul class="feature-list">
+            <li><strong>信息呈现</strong><br>赛事数据与资讯内容采用平实的排版，减少干扰，方便快速浏览。</li>
+            <li><strong>持续维护</strong><br>并非一成不变的页面，后台有常规更新与调整，保持与当前节奏同步。</li>
+            <li><strong>访问方式</strong><br>通过 <a href="https://ssl-tianbosports.com">天博体育</a> 的域名即可进入，没有繁琐的跳转层。</li>
+            <li><strong>界面风格</strong><br>整体克制，不堆砌动画或弹窗，把注意力留给内容。</li>
+        </ul>
+
+        <!-- 场景 / 提示（类似FAQ摘要但保持叙述） -->
+        <div class="scene-note">
+            <h3>一些你可能想知道的</h3>
+            <p>
+                无论是初次接触还是偶尔回顾，这个站点并不试图改变你的浏览习惯。它只是提供了另一种选择——
+                如果你恰好需要查找体育相关的信息，或者想了解某个赛事动态，可以试试直接打开它的页面。
+            </p>
+            <ul>
+                <li>内容主要围绕体育赛事、数据、动态资讯展开，不包含非相关领域。</li>
+                <li>页面结构多年来保持稳定，没有大幅变动，便于重复访问时快速定位。</li>
+                <li>如果你在它上面找到了有用的信息，那便是它存在的意义之一。</li>
+            </ul>
+        </div>
+
+        <!-- 温和结尾 -->
+        <div class="closing">
+            <p>
+                每个站点都有自己的节奏。<a href="https://ssl-tianbosports.com">天博体育</a> 选择了相对安静的方式，
+                不追赶流量，不制造紧迫感。它就在那里，等你需要的时候，随时可以打开。
+            </p>
+            <p>
+                这篇介绍写于一次普通的浏览之后。如果你愿意，也可以亲自过去看看。
+            </p>
+            <small>—— 以上文字仅为客观介绍，不构成任何承诺或引导。</small>
+        </div>
+
+    </div>
+
+</body>
+</html>
